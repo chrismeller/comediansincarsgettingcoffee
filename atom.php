@@ -120,11 +120,14 @@
 		}
 
 		$description = sprintf(
-			'New %1$s with guest %2$s<br><br>%3$s',
+			'New %1$s with guest %2$s',
 			ucwords( $item->type ),
-			$guests,
-			$item->description
+			$guests
 		);
+		
+		if ( $item->description != '' ) {
+			$description .= '<br><br>' . $item->description;
+		}
 
 		$summary_node = $dom->createTextNode( $description  );
 		$summary = $dom->createElement( 'summary' );
