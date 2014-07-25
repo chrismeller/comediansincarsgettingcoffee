@@ -120,7 +120,7 @@
 		}
 
 		$description = sprintf(
-			'New %1$s with guest %2$s' . "\n\n" . '%3$s',
+			'New %1$s with guest %2$s<br><br>%3$s',
 			ucwords( $item->type ),
 			$guests,
 			$item->description
