@@ -93,8 +93,14 @@
 		$title = $dom->createElement('title');
 		$title->appendChild( $title_node );
 
+		$link_url = $item->urlSlug;
+		
+		if ( $item->type == 'singleshot' ) {
+			$link_url = 'single-shots/' . $link_url;
+		}
+
 		$link = $dom->createElement( 'link' );
-		$link->setAttribute( 'href', 'http://comediansincarsgettingcoffee.com/' . $item->urlSlug );
+		$link->setAttribute( 'href', 'http://comediansincarsgettingcoffee.com/' . $link_url );
 
 		$uuid = hash( 'md5', $item->mediaId );
 		$uuid_hex = uuid_hex( $uuid );
